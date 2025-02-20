@@ -1,0 +1,73 @@
+/*CENG311 Activity 2 css file*/
+
+/*styling for the table goes here*/
+body 
+{
+	width: 750px;
+	margin: 0 auto;
+}
+
+table 
+{
+	border-collapse: collapse;
+	border: 1px solid black;
+	margin: 20px;
+}
+
+thead 
+{
+	background-color: yellow;
+}
+
+th, td 
+{
+	border: 1px solid black;
+	padding: .2em 1em .2em .5em;
+	text-align: left;
+	vertical-align: middle;
+}
+
+
+
+tbody tr:nth-child(even) td 
+{
+	background-color: yellow;
+}
+#editorial{
+	font-weight: bold;
+background-color:white;
+   vertical-align: top;	
+}
+#customer-service{
+	font-weight: bold;
+	background-color:white;
+	vertical-align: top;		
+	}
+	#marketing{
+		font-weight: bold;
+		background-color:white;
+		vertical-align: top;		
+		}
+		#total{ text-align: right;
+		   font-weight: bold;
+}
+.right{
+	text-align: right;
+
+}
+	.right2{
+		text-align: right;
+		font-weight: bold;
+}
+.mydiv{
+	border:black solid 1px;
+	margin-top: 30px;
+
+}
+h1{
+	text-align: center;
+}
+.table{
+	margin-left: auto;
+	margin-right: auto;
+}
