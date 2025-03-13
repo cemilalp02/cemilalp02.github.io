@@ -2,68 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Activity6 Preview</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    h2 {
-      text-align: center;
-    }
-    .result-container {
-      margin-top: 20px;
-    }
-    .result-container div {
-      margin-bottom: 10px;
-    }
-    .label {
-      font-weight: bold;
-    }
-  </style>
+  <title>Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-  <h2>Registration Form - Preview</h2>
+  <h2>Registration Form</h2>
 
-  <div class="result-container">
-    <?php
-    
-      $fields = [
-        'name'     => 'Name',
-        'username' => 'Username',
-        'password' => 'Password',
-        'address'  => 'Address',
-        'country'  => 'Country',
-        'zip'      => 'ZIP Code',
-        'email'    => 'Email',
-        'sex'      => 'Sex',
-        'about'    => 'About'
-      ];
-
-     
-
-      foreach ($fields as $field => $label) {
-        if (isset($_POST[$field]) && trim($_POST[$field]) !== '') {
-        
-          echo "<div><span class='label'>$label:</span> " . htmlspecialchars($_POST[$field]) . "</div>";
-        } else {
-          echo "<div><span class='label'>$label:</span> Not provided</div>";
-        }
-      }
-
-     
-      echo "<div><span class='label'>Language:</span> ";
-      if (isset($_POST['language']) && is_array($_POST['language']) && count($_POST['language']) > 0) {
+  <div class="form-container">
+    <form action="Activity6-preview.php" method="post">
       
-        $languages = array_map('htmlspecialchars', $_POST['language']);
-        echo implode(', ', $languages);
-      } else {
-        echo "Not provided";
-      }
-      echo "</div>";
-    ?>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+      </div>
+
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" name="address" id="address">
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country:</label>
+        <select name="country" id="country">
+          <option value="">(Please select a country)</option>
+          <option value="America">America</option>
+          <option value="Turkey">Turkey</option>
+          <option value="Germany">Germany</option>
+          <option value="France">France</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="zip">ZIP Code:</label>
+        <input type="text" name="zip" id="zip">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email">
+      </div>
+
+      <div class="form-group">
+        <label>Sex:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="sex" value="Male"> Male</label>
+          <label><input type="radio" name="sex" value="Female"> Female</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Language:</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="language[]" value="English"> English</label>
+          <label><input type="checkbox" name="language[]" value="French"> French</label>
+          <label><input type="checkbox" name="language[]" value="German"> German</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="about">About:</label>
+        <textarea name="about" id="about" rows="4"></textarea>
+      </div>
+
+      <div class="form-group">
+        
+        <input type="submit" value="submit" class="submit-btn">
+      </div>
+
+    </form>
   </div>
 
 </body>
