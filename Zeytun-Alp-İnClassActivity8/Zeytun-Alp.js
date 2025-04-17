@@ -7,6 +7,9 @@ window.onload = function () {
     $("display_results").onclick = displayResults;
     $("display_scores").onclick = displayScores;
     $("add").onclick = addScore;
+
+    document.getElementById("name").focus();
+    document.getElementById("name").select();
    
 };
 
@@ -67,4 +70,7 @@ function addScore() {
 
     document.getElementById("name").value = "";
     document.getElementById("score").value = "";
+
+    document.getElementById("name").focus();
+    document.getElementById("name").select();
 }
